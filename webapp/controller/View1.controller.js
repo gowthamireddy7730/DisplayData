@@ -23,17 +23,14 @@ sap.ui.define([
 
             oImage.setSrc(sPath);
 
-            // Apply style immediately
             oImage.addStyleClass("myColoredImage");
             
         },
 
-        // Nav Back Button → Funny Message
         onNavBack: function () {
             MessageToast.show("Oh no! It's just a NavBack button 😄");
         },
 
-        // Home Button → Show Image
         onHomePress: function () {
             var sDeviceType = "Desktop";
 
@@ -46,20 +43,16 @@ sap.ui.define([
             MessageToast.show("You are using: " + sDeviceType);
         },
 
-        // Show image + Back button
         onShowImage: function () {
-            this.byId("img").setVisible(true);       // Show image
-            this.byId("btnBack").setVisible(true);   // Show back button
+            this.byId("img").setVisible(true);       
+            this.byId("btnBack").setVisible(true);   
         },
 
-        // Back button pressed
         onBackFromImage: function () {
-            this.byId("img").setVisible(false);      // Hide image
-            this.byId("btnBack").setVisible(false);  // Hide back button
+            this.byId("img").setVisible(false);      
+            this.byId("btnBack").setVisible(false);  
         },
 
-
-        // Submit Button → Only show success message
         onSubmit: function () {
             var oModel = this.getView().getModel("userModel");
             oModel.setProperty("/user", {
@@ -68,19 +61,18 @@ sap.ui.define([
                 city: "",
                 phone: ""
         });
-        // Ask user confirmation
+       
         MessageBox.confirm("Successfully Registered! Do you want to display data?", {
             actions: [MessageBox.Action.OK, MessageBox.Action.CANCEL],
             onClose: function (sAction) {
                 if (sAction === MessageBox.Action.OK) {
-                // Show the mountains panel
+               
                 var oPanel = this.byId("mountainsPanel");
                 oPanel.setVisible(true);
 
-                // Optional success toast
                 MessageToast.show("Mountains data displayed!");
                 }
-            }.bind(this) // important to keep 'this' pointing to controller
+            }.bind(this) 
         });
 
         },
