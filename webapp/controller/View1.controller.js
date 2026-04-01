@@ -18,10 +18,10 @@ sap.ui.define([
                     phone: ""
                 }
             };
-             var sPath = sap.ui.require.toUrl("registrationform/images/Elephant.jpeg");
-             var oImage = this.byId("img");
+            var sPath = sap.ui.require.toUrl("registrationform/images/Elephant.jpeg");
+            var oImage = this.byId("img");
 
-             oImage.setSrc(sPath);
+            oImage.setSrc(sPath);
 
             // Apply style immediately
             oImage.addStyleClass("myColoredImage");
@@ -35,7 +35,7 @@ sap.ui.define([
 
         // Home Button → Show Image
         onHomePress: function () {
-         var sDeviceType = "Desktop";
+            var sDeviceType = "Desktop";
 
             if (Device.system.phone) {
                 sDeviceType = "Phone";
@@ -46,29 +46,42 @@ sap.ui.define([
             MessageToast.show("You are using: " + sDeviceType);
         },
 
-        // Button beside Home → show image
+        // Show image + Back button
         onShowImage: function () {
-           this.byId("img").setVisible(true);
+            this.byId("img").setVisible(true);       // Show image
+            this.byId("btnBack").setVisible(true);   // Show back button
         },
-        //Close Image Button
-        onCloseImage: function () {
-        var oImage = this.byId("img");
-        oImage.setVisible(false);
-        },  
+
+        // Back button pressed
+        onBackFromImage: function () {
+            this.byId("img").setVisible(false);      // Hide image
+            this.byId("btnBack").setVisible(false);  // Hide back button
+        },
 
 
         // Submit Button → Only show success message
         onSubmit: function () {
-                var oModel = this.getView().getModel("userModel");
-                 
+            var oModel = this.getView().getModel("userModel");
+            oModel.setProperty("/user", {
+                name: "",
+                email: "",
+                city: "",
+                phone: ""
+        });
+        // Ask user confirmation
+        MessageBox.confirm("Successfully Registered! Do you want to display data?", {
+            actions: [MessageBox.Action.OK, MessageBox.Action.CANCEL],
+            onClose: function (sAction) {
+                if (sAction === MessageBox.Action.OK) {
+                // Show the mountains panel
+                var oPanel = this.byId("mountainsPanel");
+                oPanel.setVisible(true);
 
-    oModel.setProperty("/user", {
-        name: "",
-        email: "",
-        city: "",
-        phone: ""
-    });
-       MessageBox.success("Submitted Successfully!");
+                // Optional success toast
+                MessageToast.show("Mountains data displayed!");
+                }
+            }.bind(this) // important to keep 'this' pointing to controller
+        });
 
         },
 
@@ -88,6 +101,16 @@ sap.ui.define([
                             city: "",
                             phone: ""
                         });
+                         var oPanel = that.byId("mountainsPanel");
+                if (oPanel) {
+                    oPanel.setVisible(false);
+                }
+
+                // Optional: clear mountains model data
+                var oMountainModel = that.getView().getModel("mountainModel");
+                if (oMountainModel) {
+                    oMountainModel.setProperty("/mountains", []);
+                }
                         MessageToast.show("Deleted Successfully");
                     }
                 }

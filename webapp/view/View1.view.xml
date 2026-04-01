@@ -3,16 +3,14 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:layout="sap.ui.layout">
-        
-         <Page id="page">
-
-        <!-- HEADER -->
+     <Page id="page">
         <subHeader>
             <Bar id="headerBar">
 
                 <contentLeft>
                     <HBox>
                         <Button icon="sap-icon://nav-back"  press="onNavBack"/>
+                        <Button text="Home" icon="sap-icon://home" press="onHomePress" class="homeButton"/>
                     </HBox>
                 </contentLeft>
 
@@ -21,10 +19,8 @@
                 </contentMiddle>
 
                 <contentRight>
-                    <HBox >
-                    <Button text="Home" icon="sap-icon://home" press="onHomePress"/>
-                    <Button text="Show Image" press="onShowImage"/>
-                    <Button text="Close Image" press="onCloseImage" class="sapUiSmallMarginBegin"/>
+                    <HBox>
+                        <Button text="Show Image" press="onShowImage" class="showImage"/>
                     </HBox>
                 </contentRight>
 
@@ -34,7 +30,6 @@
         <content>
             <VBox class="sapUiSmallMargin">
 
-                <!-- USER FORM -->
                 <Label text="Name : "/>
                 <Input value="{userModel>/user/name}"/>
 
@@ -46,38 +41,36 @@
 
                 <Label text="Phone : "/>
                 <Input value="{userModel>/user/phone}"/>
-
-                <HBox class="sapUiSmallMarginTop" justifyContent="Start" alignItems="Center">
-                    <Button text="Submit" press="onSubmit"/>
-                    <Button text="Delete" press="onDelete" class="sapUiSmallMarginBegin"/>
-                    
-                </HBox>
-
-                <Image id="img" src="registrationform/images/Elephant.jpeg" visible="false" class="sapUiSmallMarginTop" width="200px"/>
-
-                <!-- MOUNTAINS DATA -->
-                <Panel headerText="Mountains Data" class="sapUiMediumMarginTop">
+                
+                <Image title="Elephant" id="img" src="registrationform/images/Elephant.jpeg" width="900px" height="600px" visible="false" class="sapUiSmallMarginTop" />
+                <Button id="btnBack" text="Back" visible="false" press="onBackFromImage" class="sapUiSmallMarginTop"/>
+                
+                <Panel id="mountainsPanel" headerText="Mountains Data" layoutData="{span:'L12 M12 S12'}" class="sapUiMediumMarginTop" visible="false">
                     <Table items="{mountainModel>/mountains}">
-                        <columns>
-                            <Column>
-                                <Text text="Name" textAlign="Begin" design="Bold"/>
-                            </Column>
-                            <Column>
-                                <Text text="Height" textAlign="Begin" design="Bold"/>
-                            </Column>
-                        </columns>
+                            <columns>
+                                <Column><Text text="Name"/></Column>
+                                <Column><Text text="Height"/></Column>
+                            </columns>
                         <items>
                             <ColumnListItem>
                                 <cells>
-                                    <Text text="{mountainModel>name}" textAlign="Begin"/>
-                                    <Text text="{mountainModel>height}" textAlign="Begin"/>
+                                    <Text text="{mountainModel>name}"/>
+                                    <Text text="{mountainModel>height}"/>
                                 </cells>
                             </ColumnListItem>
                         </items>
                     </Table>
                 </Panel>
-
             </VBox>
         </content>
+
+        <footer>
+            <Toolbar>
+                <HBox class="sapUiSmallMarginTop" justifyContent="SpaceBetween" alignItems="End" width="100%">
+                    <Button text="Delete" press="onDelete" class="deleteButton"/>
+                    <Button text="Submit" press="onSubmit" class="submitButton"/>
+                </HBox>
+            </Toolbar>
+        </footer>
     </Page>
 </mvc:View>

@@ -1,23 +1,50 @@
-/* Enter your custom styles here */.fullWidth {
+/* Enter your custom styles here */
+.fullWidth {
     width: 100%;
 }
 
 /* Custom Image Styling */
 .myColoredImage {
+    display: block;
     width: 300px;                  /* set a fixed width */
-    height: auto;                  /* maintain aspect ratio */
+    height: 300px;                 /* maintain aspect ratio */
     padding: 15px;                 /* space inside the border */
     margin: 20px auto;             /* space outside the image, center horizontally */
-    border: 3px solid pink;  /* border around image */
+    border: 3px solid pink;      /* border around image */
     border-radius: 15px;           /* rounded corners */
-    background-color: #e0ffe0;     /* light green background inside padding */     
+    background-color: #e0ffe0;   /* light green background inside padding */     
 }
 
 /* Hover Effect */
 .myColoredImage:hover {
     filter: brightness(90%);
-    transform: scale(1.05);        /* subtle zoom */
-    padding: 20px;                 /* increase padding on hover */
-    margin: 15px auto;             /* adjust margin on hover */
-    border-color: orange;           /* change border color on hover */
+    transform: scale(1.05);         /* subtle zoom */
+    padding: 20px;                  /* increase padding on hover */
+    margin: 15px auto;              /* adjust margin on hover */
+    border-color: orange;         /* change border color on hover */
+}
+
+
+.submitButton {
+    background-color: #13f49365;  
+    color:white;              
+    border-radius: 5px;         
+}
+
+.deleteButton {
+    background-color: rgba(233, 6, 146, 0.374);  
+    color: white;               
+    border-radius: 5px;         
+}
+
+.homeButton {
+    background-color: rgba(8, 228, 34, 0.374);  
+    color: white;               
+    border-radius: 5px;
+}
+
+.showImage {
+    background-color: rgba(250, 242, 17, 0.374);  
+    color: white;               
+    border-radius: 5px;
 }
