@@ -1,0 +1,83 @@
+<mvc:View
+    controllerName="registrationform.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:layout="sap.ui.layout">
+        
+         <Page id="page">
+
+        <!-- HEADER -->
+        <subHeader>
+            <Bar id="headerBar">
+
+                <contentLeft>
+                    <HBox>
+                        <Button icon="sap-icon://nav-back"  press="onNavBack"/>
+                    </HBox>
+                </contentLeft>
+
+                <contentMiddle>
+                    <Title text="User Registration Form" />
+                </contentMiddle>
+
+                <contentRight>
+                    <HBox >
+                    <Button text="Home" icon="sap-icon://home" press="onHomePress"/>
+                    <Button text="Show Image" press="onShowImage"/>
+                    <Button text="Close Image" press="onCloseImage" class="sapUiSmallMarginBegin"/>
+                    </HBox>
+                </contentRight>
+
+            </Bar>
+        </subHeader>
+
+        <content>
+            <VBox class="sapUiSmallMargin">
+
+                <!-- USER FORM -->
+                <Label text="Name : "/>
+                <Input value="{userModel>/user/name}"/>
+
+                <Label text="Email : "/>
+                <Input value="{userModel>/user/email}"/>
+
+                <Label text="City : "/>
+                <Input value="{userModel>/user/city}"/>
+
+                <Label text="Phone : "/>
+                <Input value="{userModel>/user/phone}"/>
+
+                <HBox class="sapUiSmallMarginTop" justifyContent="Start" alignItems="Center">
+                    <Button text="Submit" press="onSubmit"/>
+                    <Button text="Delete" press="onDelete" class="sapUiSmallMarginBegin"/>
+                    
+                </HBox>
+
+                <Image id="img" src="registrationform/images/Elephant.jpeg" visible="false" class="sapUiSmallMarginTop" width="200px"/>
+
+                <!-- MOUNTAINS DATA -->
+                <Panel headerText="Mountains Data" class="sapUiMediumMarginTop">
+                    <Table items="{mountainModel>/mountains}">
+                        <columns>
+                            <Column>
+                                <Text text="Name" textAlign="Begin" design="Bold"/>
+                            </Column>
+                            <Column>
+                                <Text text="Height" textAlign="Begin" design="Bold"/>
+                            </Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem>
+                                <cells>
+                                    <Text text="{mountainModel>name}" textAlign="Begin"/>
+                                    <Text text="{mountainModel>height}" textAlign="Begin"/>
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </Panel>
+
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

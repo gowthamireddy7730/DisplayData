@@ -1,0 +1,23 @@
+/* Enter your custom styles here */.fullWidth {
+    width: 100%;
+}
+
+/* Custom Image Styling */
+.myColoredImage {
+    width: 300px;                  /* set a fixed width */
+    height: auto;                  /* maintain aspect ratio */
+    padding: 15px;                 /* space inside the border */
+    margin: 20px auto;             /* space outside the image, center horizontally */
+    border: 3px solid pink;  /* border around image */
+    border-radius: 15px;           /* rounded corners */
+    background-color: #e0ffe0;     /* light green background inside padding */     
+}
+
+/* Hover Effect */
+.myColoredImage:hover {
+    filter: brightness(90%);
+    transform: scale(1.05);        /* subtle zoom */
+    padding: 20px;                 /* increase padding on hover */
+    margin: 15px auto;             /* adjust margin on hover */
+    border-color: orange;           /* change border color on hover */
+}

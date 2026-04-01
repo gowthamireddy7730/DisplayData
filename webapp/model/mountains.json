@@ -1,0 +1,49 @@
+{
+  "mountains": [
+    { "name": "Mount Everest", "height": "8848m", "country": "Nepal/China" },
+    { "name": "K2", "height": "8611m", "country": "Pakistan/China" },
+    { "name": "Kangchenjunga", "height": "8586m", "country": "India/Nepal" },
+    { "name": "Lhotse", "height": "8516m", "country": "Nepal/China" },
+    { "name": "Makalu", "height": "8485m", "country": "Nepal/China" },
+    { "name": "Cho Oyu", "height": "8188m", "country": "Nepal/China" },
+    { "name": "Dhaulagiri I", "height": "8167m", "country": "Nepal" },
+    { "name": "Manaslu", "height": "8163m", "country": "Nepal" },
+    { "name": "Nanga Parbat", "height": "8126m", "country": "Pakistan" },
+    { "name": "Annapurna I", "height": "8091m", "country": "Nepal" },
+
+    { "name": "Gasherbrum I", "height": "8080m", "country": "Pakistan/China" },
+    { "name": "Broad Peak", "height": "8051m", "country": "Pakistan/China" },
+    { "name": "Gasherbrum II", "height": "8035m", "country": "Pakistan/China" },
+    { "name": "Shishapangma", "height": "8027m", "country": "China" },
+
+    { "name": "Gyachung Kang", "height": "7952m", "country": "Nepal/China" },
+    { "name": "Annapurna II", "height": "7937m", "country": "Nepal" },
+    { "name": "Gasherbrum III", "height": "7952m", "country": "Pakistan/China" },
+    { "name": "Himalchuli", "height": "7893m", "country": "Nepal" },
+    { "name": "Distaghil Sar", "height": "7885m", "country": "Pakistan" },
+
+    { "name": "Rakaposhi", "height": "7788m", "country": "Pakistan" },
+    { "name": "Namcha Barwa", "height": "7782m", "country": "China" },
+    { "name": "Kamet", "height": "7756m", "country": "India" },
+    { "name": "Saltoro Kangri", "height": "7742m", "country": "India/Pakistan" },
+    { "name": "Jannu", "height": "7710m", "country": "Nepal" },
+
+    { "name": "Trisul", "height": "7120m", "country": "India" },
+    { "name": "Nun Peak", "height": "7135m", "country": "India" },
+    { "name": "Kun Peak", "height": "7077m", "country": "India" },
+    { "name": "Mount Elbrus", "height": "5642m", "country": "Russia" },
+    { "name": "Mont Blanc", "height": "4808m", "country": "France/Italy" },
+
+    { "name": "Matterhorn", "height": "4478m", "country": "Switzerland/Italy" },
+    { "name": "Mount Rainier", "height": "4392m", "country": "USA" },
+    { "name": "Mount Fuji", "height": "3776m", "country": "Japan" },
+    { "name": "Mount Kilimanjaro", "height": "5895m", "country": "Tanzania" },
+    { "name": "Denali", "height": "6190m", "country": "USA" },
+
+    { "name": "Aconcagua", "height": "6961m", "country": "Argentina" },
+    { "name": "Mount Kosciuszko", "height": "2228m", "country": "Australia" },
+    { "name": "Mount Vinson", "height": "4892m", "country": "Antarctica" },
+    { "name": "Pico de Orizaba", "height": "5636m", "country": "Mexico" },
+    { "name": "Mount Hood", "height": "3429m", "country": "USA" }
+  ]
+}
